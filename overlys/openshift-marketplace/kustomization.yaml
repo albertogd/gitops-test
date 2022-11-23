@@ -3,13 +3,14 @@ kind: Kustomization
 resources:
 - ../../base/openshift-marketplace
 
-configMapGenerator:
-- name: marketplace-properties
-  namespace: openshift-marketplace
-  envs: [marketplace.properties]
-  behavior: replace
-
 generatorOptions:
  disableNameSuffixHash: true
  annotations:
   config.kubernetes.io/local-config: 'true'
+
+namespace: openshift-marketplace
+
+configMapGenerator:
+- name: marketplace-properties
+  envs: [marketplace.properties]
+  behavior: replace
