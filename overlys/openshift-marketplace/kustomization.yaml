@@ -3,21 +3,11 @@ kind: Kustomization
 resources:
   - ../../base
 
-configurations: 
-  - configuration.yaml
-
 configMapGenerator:
   - name: marketplace-properties
     envs: [marketplace.properties]
+    behavior: replace
 
 generatorOptions:
  annotations:
    config.kubernetes.io/local-config: 'true'
-
-vars:
-  - name: REGISTRY
-    objref: { kind: ConfigMap, name: marketplace-properties, apiVersion: v1 }
-    fieldref: { fieldpath: data.REGISTRY }
-  - name: RH_CATALOG_VERSION
-    objref: { kind: ConfigMap, name: marketplace-properties, apiVersion: v1 }
-    fieldref: { fieldpath: data.RH_CATALOG_VERSION }
