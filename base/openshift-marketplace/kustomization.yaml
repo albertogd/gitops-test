@@ -13,8 +13,8 @@ configMapGenerator:
   
 generatorOptions:
  disableNameSuffixHash: true
- annotations:
-  config.kubernetes.io/local-config: 'true'
+# annotations:
+#  config.kubernetes.io/local-config: 'true'
 
 namespace: openshift-marketplace
 
