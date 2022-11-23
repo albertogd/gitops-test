@@ -10,7 +10,6 @@ configurations:
 configMapGenerator:
   - name: marketplace-properties
     envs: [marketplace.properties]
-    behavior: replace
   
 generatorOptions:
  annotations:
