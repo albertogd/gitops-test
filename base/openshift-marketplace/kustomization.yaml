@@ -5,22 +5,22 @@ resources:
 - local-certified-operators.yml
 
 configurations: 
-  - configuration.yaml
+- configuration.yaml
 
 configMapGenerator:
-  - name: marketplace-properties
-    namespace: openshift-marketplace
-    envs: [marketplace.properties]
+- name: marketplace-properties
+  namespace: openshift-marketplace
+  envs: [marketplace.properties]
   
 generatorOptions:
-  disableNameSuffixHash: true
-  annotations:
-    config.kubernetes.io/local-config: 'true'
+ disableNameSuffixHash: true
+ annotations:
+  config.kubernetes.io/local-config: 'true'
 
 vars:
-  - name: REGISTRY
-    objref: { kind: ConfigMap, name: marketplace-properties, namespace: openshift-marketplace, apiVersion: v1 }
-    fieldref: { fieldpath: data.REGISTRY }
-  - name: RH_CATALOG_VERSION
-    objref: { kind: ConfigMap, name: marketplace-properties, namespace: openshift-marketplace, apiVersion: v1 }
-    fieldref: { fieldpath: data.RH_CATALOG_VERSION }
+- name: REGISTRY
+  objref: { kind: ConfigMap, name: marketplace-properties, namespace: openshift-marketplace, apiVersion: v1 }
+  fieldref: { fieldpath: data.REGISTRY }
+- name: RH_CATALOG_VERSION
+  objref: { kind: ConfigMap, name: marketplace-properties, namespace: openshift-marketplace, apiVersion: v1 }
+  fieldref: { fieldpath: data.RH_CATALOG_VERSION }
