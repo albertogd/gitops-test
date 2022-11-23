@@ -13,4 +13,3 @@ namespace: openshift-marketplace
 configMapGenerator:
 - name: marketplace-properties
   envs: [marketplace.properties]
-  behavior: replace
