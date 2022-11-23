@@ -16,7 +16,7 @@ generatorOptions:
  annotations:
   config.kubernetes.io/local-config: 'true'
 
-namespace: marketplace-properties
+namespace: openshift-marketplace
 
 vars:
 - name: REGISTRY
