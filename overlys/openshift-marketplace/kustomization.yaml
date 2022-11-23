@@ -5,7 +5,9 @@ resources:
 
 configMapGenerator:
   - name: marketplace-properties
+    namespace: openshift-marketplace
     envs: [marketplace.properties]
+    behavior: replace
 
 generatorOptions:
  annotations:

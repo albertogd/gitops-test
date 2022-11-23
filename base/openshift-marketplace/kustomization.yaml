@@ -9,6 +9,7 @@ configurations:
 
 configMapGenerator:
   - name: marketplace-properties
+    namespace: openshift-marketplace
     envs: [marketplace.properties]
   
 generatorOptions:
@@ -17,8 +18,8 @@ generatorOptions:
 
 vars:
   - name: REGISTRY
-    objref: { kind: ConfigMap, name: marketplace-properties, apiVersion: v1 }
+    objref: { kind: ConfigMap, name: marketplace-properties, namespace: openshift-marketplace, apiVersion: v1 }
     fieldref: { fieldpath: data.REGISTRY }
   - name: RH_CATALOG_VERSION
-    objref: { kind: ConfigMap, name: marketplace-properties, apiVersion: v1 }
+    objref: { kind: ConfigMap, name: marketplace-properties, namespace: openshift-marketplace, apiVersion: v1 }
     fieldref: { fieldpath: data.RH_CATALOG_VERSION }
