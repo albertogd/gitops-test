@@ -5,7 +5,7 @@ metadata:
   name: {{ .Values.Ingress.name }}
   namespace: openshift-ingress-operator
 spec:
-  domain: {{ .Values.IngressController.name }}.apps.{{ .Values.Cluster.domain }}
+  domain: {{ .Values.Ingress.name }}.apps.{{ .Values.Cluster.domain }}
   logging:
     access:
       destination:
@@ -13,7 +13,7 @@ spec:
           address: 10.0.0.1
           port: 10514
         type: Syslog
-      httpLogFormat: tenant="{{ .Values.IngressController.name }}",cluster="{{ .Values.Cluster.name }}",datacenter="{{ .Values.Cluster.datacenter }}",status_code="%ST",bytes_read="%B",bytes_uploaded="%U",captrd_req_headers="%hr",captrd_res_headers="%hs",hostname="%H",method="%HM",request="%HP",res_time="%TR",retries="%rc",srv_queue="%sq",srv_conn="%sc",srv_queue="%sq",backend_name="%b",backend_source_ip="%bi",server_name="%s",req_date="%tr",actconn="%ac",Ta="%Ta",Tc="%Tc",term_state="%tsc",tot_wait_q="%Tw",Tr="%Tr",query_string="%HQ"
+      httpLogFormat: tenant="{{ .Values.Ingress.name }}",cluster="{{ .Values.Cluster.name }}",datacenter="{{ .Values.Cluster.datacenter }}",status_code="%ST",bytes_read="%B",bytes_uploaded="%U",captrd_req_headers="%hr",captrd_res_headers="%hs",hostname="%H",method="%HM",request="%HP",res_time="%TR",retries="%rc",srv_queue="%sq",srv_conn="%sc",srv_queue="%sq",backend_name="%b",backend_source_ip="%bi",server_name="%s",req_date="%tr",actconn="%ac",Ta="%Ta",Tc="%Tc",term_state="%tsc",tot_wait_q="%Tw",Tr="%Tr",query_string="%HQ"
       logEmptyRequests: Ignore
   nodePlacement:
     nodeSelector:
