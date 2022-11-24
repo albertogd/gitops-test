@@ -21,7 +21,7 @@ spec:
         path: base
         helm:
           valueFiles:
-          - clusters/{{cluster.name}}/{{cluster.alias}}.yaml
+          - clusters/{{cluster.name}}/values.yaml
       destination:
         server: '{{cluster.address}}'
       syncPolicy: {}
