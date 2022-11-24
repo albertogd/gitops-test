@@ -1,0 +1,11 @@
+Cluster:
+  name: aa
+  datacenter: bb
+  domain: aa.redhat.com
+  registry: quay-des.io
+  
+CatalogSource:
+  rh_catalog_version: v4.9
+
+Ingress:
+  name: kk

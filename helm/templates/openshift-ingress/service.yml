@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: router-nodeport-{{ .Values.Ingress.name }}
+  namespace: openshift-ingress
+  labels:
+    app: router
+    ingresscontroller.operator.openshift.io/owning-ingresscontroller: {{ .Values.Ingress.name }}
+    router: router-nodeport-{{ .Values.Ingress.name }}
+spec:
+  type: NodePort
+  externalTrafficPolicy: Local
+  ports:
+    - name: http
+      nodePort: 30916
+      port: 80
+      protocol: TCP
+      targetPort: http
+    - name: https
+      nodePort: 31616
+      port: 443
+      protocol: TCP
+      targetPort: https
+  selector:
+    ingresscontroller.operator.openshift.io/deployment-ingresscontroller: {{ .Values.Ingress.name }}
