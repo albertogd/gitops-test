@@ -1,0 +1,11 @@
+Cluster:
+  name: pro
+  datacenter: bb
+  domain: pro.redhat.com
+  registry: quay-pro.io
+  
+CatalogSource:
+  rh_catalog_version: v4.9
+
+Ingress:
+  name: pro
