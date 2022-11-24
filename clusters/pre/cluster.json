@@ -4,7 +4,7 @@
   "region": "eu",
   "cluster": {
     "name": "pre.redhat.com",
-    "alias": "des",
+    "alias": "pre",
     "address": "https://pre.redhat.com"
   }
 }
