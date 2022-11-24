@@ -14,7 +14,7 @@ spec:
     metadata:
       name: '{{cluster.alias}}-cluster-config'
     spec:
-      project: '{{environment}}-cluster-config'
+      project: '{{environment}}'
       source:
         repoURL: https://github.com/albertogd/gitops-test
         targetRevision: main
