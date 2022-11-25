@@ -5,7 +5,9 @@ Cluster:
   registry: quay-pro.io
   
 CatalogSource:
+  include: true
   rh_catalog_version: v4.9
 
 Ingress:
+  include: false
   name: pro
