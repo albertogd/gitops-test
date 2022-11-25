@@ -1,3 +1,5 @@
+{{- if .Values.Ingress.include }}
+
 ---
 apiVersion: v1
 kind: Service
@@ -24,3 +26,5 @@ spec:
       targetPort: https
   selector:
     ingresscontroller.operator.openshift.io/deployment-ingresscontroller: {{ .Values.Ingress.name }}
+
+{{ end }}

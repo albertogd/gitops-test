@@ -5,7 +5,9 @@ Cluster:
   registry: quay-des.io
   
 CatalogSource:
+  include: true
   rh_catalog_version: v4.9
 
 Ingress:
+  include: true
   name: des
